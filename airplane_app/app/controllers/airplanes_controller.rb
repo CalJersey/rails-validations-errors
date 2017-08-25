@@ -1,6 +1,8 @@
 class AirplanesController < ApplicationController
   def index
     @airplanes = Airplane.all
+    count = cookies[:visit_count] || 1
+    cookies[:visit_count] = count.to_i + 1
   end
 
   def new
@@ -24,4 +26,13 @@ class AirplanesController < ApplicationController
   def airplane_params
     params.require(:airplane).permit(:name, :description)
   end
+  def create
+    @airplane = Airplane.new(airplane_params)
+      if @airplane.save
+        redirect_to @airplane
+      else
+        flash[:error] = airplane.errors.full_messages.join(" bad info")
+        render :new
+      end
+    end
 end
