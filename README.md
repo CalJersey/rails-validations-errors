@@ -174,7 +174,7 @@ Just one last step! We've sent `flash` to the view, but we haven't rendered it y
 * After you've gotten a flash message to display an error from the `name` of your airplane, create a validation that we haven't used yet for the `description` attribute in your airplane model. Then make sure you can get a flash message to display when somebody generates bad input.
 * Create a flash message that communicates to the user that they *have* successfully created a new entry in the db.
 * Add a passenger model with at least 5 attributes and at least 3 novel validations.
-* Add a controller and controller methods that will properly allow you to display any issues with creating an instance of the passenger model.
+* Add a controller and controller methods that will properly allow you to display any issues with creating an instance of the passenger model. (Note: you'll also need to create a form for the user to try to create passengers.)
 
 ## Closing
 
